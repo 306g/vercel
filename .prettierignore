@@ -38,3 +38,6 @@ packages/cli/src/util/dev/templates/*.ts
 
 # python
 /python
+
+# standalone marketing page (hand-formatted HTML, no build step)
+opsmith-landing
