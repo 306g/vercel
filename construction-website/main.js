@@ -10,16 +10,18 @@
    * to a canvas. Frame sequences scrub far more smoothly than seeking a
    * <video> element's currentTime, and work identically across browsers.
    * ------------------------------------------------------------------ */
-  const FRAME_COUNT = 97;
+  // 48fps motion-interpolated frames (the 24fps source doubled) so each
+  // scroll step moves the picture a small amount.
+  const FRAME_COUNT = 191;
   const framePath = i =>
     `assets/frames/f${String(i + 1).padStart(3, '0')}.webp`;
 
   const hero = document.querySelector('.hero');
   const canvas = hero.querySelector('.hero__canvas');
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { alpha: false });
   const stages = [...hero.querySelectorAll('.hero__stage')].map(el => {
     const [start, end] = el.dataset.range.split(',').map(Number);
-    return { el, start, end };
+    return { el, start, end, last: -1 };
   });
   const meterFill = hero.querySelector('.hero__meter-fill');
   const meterPct = hero.querySelector('.hero__meter-pct');
@@ -29,16 +31,16 @@
   const frames = new Array(FRAME_COUNT);
   let loaded = 0;
   let currentFrame = 0;
-  let targetFrame = 0;
   let drawnFrame = -1;
-  let progress = 0;
+  let lastPct = -1;
+  let lastTime = 0;
 
   // Load order: first & last frame, then a coarse pass, then fill the gaps.
   // The scrubber can always show *something* close while the rest streams in.
   function loadOrder() {
     const order = [0, FRAME_COUNT - 1];
     const seen = new Set(order);
-    for (let step = 16; step >= 1; step = Math.floor(step / 2)) {
+    for (let step = 32; step >= 1; step = Math.floor(step / 2)) {
       for (let i = 0; i < FRAME_COUNT; i += step) {
         if (!seen.has(i)) {
           seen.add(i);
@@ -85,37 +87,44 @@
   }
 
   function resizeCanvas() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const w = canvas.clientWidth;
-    const h = canvas.clientHeight;
-    canvas.width = Math.round(w * dpr);
-    canvas.height = Math.round(h * dpr);
+    // The source is 1280px wide; a backing store much larger than that only
+    // costs fill-rate, so cap the pixel ratio.
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const w = Math.round(canvas.clientWidth * dpr);
+    const h = Math.round(canvas.clientHeight * dpr);
+    // Mobile browsers fire resize when the URL bar shows/hides. Re-assigning
+    // the canvas size clears and reallocates it, so skip no-op resizes.
+    if (w === canvas.width && h === canvas.height) return;
+    canvas.width = w;
+    canvas.height = h;
+    ctx.imageSmoothingQuality = 'high';
     drawnFrame = -1;
     requestTick();
   }
 
-  function draw(index) {
-    const img = nearestLoaded(index);
-    if (!img) return;
+  function drawImageCover(img) {
     const cw = canvas.width;
     const ch = canvas.height;
     const ir = img.naturalWidth / img.naturalHeight;
-    const cr = cw / ch;
-    // object-fit: cover
-    let dw, dh;
-    if (cr > ir) {
-      dw = cw;
-      dh = cw / ir;
-    } else {
+    let dw = cw;
+    let dh = cw / ir;
+    if (dh < ch) {
       dh = ch;
       dw = ch * ir;
     }
     ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
   }
 
+  function draw(index) {
+    const img = nearestLoaded(index);
+    if (!img) return false;
+    drawImageCover(img);
+    return img === frames[index];
+  }
+
   function readProgress() {
     const rect = hero.getBoundingClientRect();
-    const scrollable = hero.offsetHeight - window.innerHeight;
+    const scrollable = hero.offsetHeight - canvas.clientHeight;
     return clamp(-rect.top / scrollable, 0, 1);
   }
 
@@ -127,16 +136,21 @@
   }
 
   function updateOverlays(p) {
-    for (const { el, start, end } of stages) {
-      const o = stageOpacity(p, start, end);
-      el.style.opacity = o.toFixed(3);
-      const shift = (1 - o) * 24;
-      el.style.translate = `0 ${shift.toFixed(1)}px`;
-      el.classList.toggle('is-active', o > 0.5);
+    for (const stage of stages) {
+      const o = Math.round(stageOpacity(p, stage.start, stage.end) * 100) / 100;
+      if (o === stage.last) continue; // avoid needless style writes
+      stage.last = o;
+      stage.el.style.opacity = o;
+      stage.el.style.translate = `0 ${((1 - o) * 24).toFixed(1)}px`;
+      stage.el.classList.toggle('is-active', o > 0.5);
     }
-    meterFill.style.transform = `scaleX(${p})`;
-    meterPct.textContent = `${Math.round(p * 100)}%`;
-    hint.style.opacity = p > 0.03 ? '0' : '1';
+    meterFill.style.transform = `scaleX(${p.toFixed(4)})`;
+    const pct = Math.round(p * 100);
+    if (pct !== lastPct) {
+      lastPct = pct;
+      meterPct.textContent = `${pct}%`;
+      hint.style.opacity = p > 0.03 ? '0' : '1';
+    }
   }
 
   let ticking = false;
@@ -147,26 +161,29 @@
     }
   }
 
-  function tick() {
+  function tick(now) {
     ticking = false;
-    progress = readProgress();
-    targetFrame = progress * (FRAME_COUNT - 1);
+    const progress = readProgress();
+    const target = progress * (FRAME_COUNT - 1);
 
-    // Ease toward the target for buttery scrubbing (skipped for reduced motion).
-    const diff = targetFrame - currentFrame;
-    currentFrame =
-      reduceMotion || Math.abs(diff) < 0.05
-        ? targetFrame
-        : currentFrame + diff * 0.18;
-
-    const index = Math.round(currentFrame);
-    if (index !== drawnFrame) {
-      draw(index);
-      if (frames[index]) drawnFrame = index;
+    // Frame-rate independent easing toward the scroll position: the picture
+    // glides instead of snapping on coarse wheel steps (off for reduced motion).
+    const dt = lastTime ? Math.min(now - lastTime, 64) : 16;
+    lastTime = now;
+    const diff = target - currentFrame;
+    if (reduceMotion || Math.abs(diff) < 0.01) {
+      currentFrame = target;
+    } else {
+      currentFrame += diff * (1 - Math.exp(-dt / 85));
     }
+
+    // Only touch the canvas when the visible frame actually changes.
+    const index = Math.round(currentFrame);
+    if (index !== drawnFrame && draw(index)) drawnFrame = index;
     updateOverlays(progress);
 
-    if (currentFrame !== targetFrame) requestTick();
+    if (currentFrame !== target) requestTick();
+    else lastTime = 0;
   }
 
   window.addEventListener('scroll', requestTick, { passive: true });
