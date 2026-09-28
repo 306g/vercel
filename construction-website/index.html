@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ridgeline Builders — Custom Homes, Built From the Ground Up</title>
+    <meta
+      name="description"
+      content="Ridgeline Builders designs and builds custom homes, renovations and light commercial projects. From bare land to move-in day, one team, one contract."
+    />
+    <meta name="theme-color" content="#14130f" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 26 L12 10 L18 19 L22 13 L30 26 Z' fill='%23c0713a'/%3E%3C/svg%3E"
+    />
+    <link rel="preload" as="image" href="assets/frames/f001.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="Ridgeline Builders home">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M2 26 L12 10 L18 19 L22 13 L30 26 Z" fill="currentColor" />
+          </svg>
+          <span>Ridgeline<em>Builders</em></span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn btn--small">Get a quote</a>
+        </nav>
+        <button
+          class="nav__toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Get a quote</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO: scroll-scrubbed video ============ -->
+      <section class="hero" id="top" aria-label="Introduction">
+        <div class="hero__sticky">
+          <canvas class="hero__canvas" aria-hidden="true"></canvas>
+          <div class="hero__shade" aria-hidden="true"></div>
+
+          <div class="hero__stage hero__stage--1" data-range="0,0.3">
+            <p class="eyebrow">Custom homes · Renovations · Commercial</p>
+            <h1>It starts<br />with the land.</h1>
+            <p class="hero__lede">
+              Every Ridgeline project begins on bare ground — surveyed, graded
+              and prepared by the same crew that hands you the keys.
+            </p>
+          </div>
+
+          <div class="hero__stage hero__stage--2" data-range="0.34,0.64">
+            <p class="eyebrow">Structure</p>
+            <h2>Built to plan.<br />Built to last.</h2>
+            <p class="hero__lede">
+              Engineered framing, stone and steel, inspected at every milestone.
+            </p>
+          </div>
+
+          <div class="hero__stage hero__stage--3" data-range="0.7,1.01">
+            <p class="eyebrow">Handover</p>
+            <h2>Ending with<br />a home.</h2>
+            <div class="hero__ctas">
+              <a href="#contact" class="btn">Start your project</a>
+              <a href="#projects" class="btn btn--ghost">See our work</a>
+            </div>
+          </div>
+
+          <div class="hero__meter" aria-hidden="true">
+            <span class="hero__meter-label">Build progress</span>
+            <div class="hero__meter-track">
+              <div class="hero__meter-fill"></div>
+            </div>
+            <span class="hero__meter-pct">0%</span>
+          </div>
+
+          <div class="hero__hint" aria-hidden="true">
+            <span>Scroll to build</span>
+            <i></i>
+          </div>
+
+          <div class="hero__loader" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- ============ STATS ============ -->
+      <section class="stats" aria-label="Company at a glance">
+        <div class="container stats__grid">
+          <div class="stat">
+            <strong data-count="27">0</strong>
+            <span>Years building</span>
+          </div>
+          <div class="stat">
+            <strong data-count="640" data-suffix="+">0</strong>
+            <span>Homes delivered</span>
+          </div>
+          <div class="stat">
+            <strong data-count="98" data-suffix="%">0</strong>
+            <span>On-time handovers</span>
+          </div>
+          <div class="stat">
+            <strong data-count="10" data-suffix="-yr">0</strong>
+            <span>Structural warranty</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section class="section" id="services">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">What we build</p>
+            <h2>One team from dirt to done.</h2>
+            <p>
+              We handle design coordination, permits, site work and construction
+              under a single contract — so there's one number to call and one
+              team accountable.
+            </p>
+          </header>
+
+          <div class="services">
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 11 12 4l9 7v9H3z" />
+                  <path d="M9 20v-6h6v6" />
+                </svg>
+              </div>
+              <h3>Custom Homes</h3>
+              <p>
+                Architect-led or design-build. We turn your plans — or a napkin
+                sketch — into a home built around how you live.
+              </p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 20h18" />
+                  <path d="M5 20V9l4-3 4 3v11" />
+                  <path d="M13 20v-7h6v7" />
+                </svg>
+              </div>
+              <h3>Additions &amp; Renovations</h3>
+              <p>
+                Second storeys, kitchen and bath remodels, whole-home refits —
+                matched seamlessly to what's already there.
+              </p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 20h20" />
+                  <path d="M4 20l3-8h10l3 8" />
+                  <path d="M9 12V8h6v4" />
+                </svg>
+              </div>
+              <h3>Site Preparation</h3>
+              <p>
+                Clearing, grading, drainage and foundations. The work you never
+                see is the work that holds everything else up.
+              </p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="3" width="16" height="18" />
+                  <path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2" />
+                </svg>
+              </div>
+              <h3>Light Commercial</h3>
+              <p>
+                Offices, clinics and retail shells up to 20,000 sq ft, delivered
+                with the same care as our residential work.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section section--dark" id="projects">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">Selected work</p>
+            <h2>Recent projects.</h2>
+          </header>
+
+          <div class="projects">
+            <figure class="project project--wide reveal">
+              <img
+                src="assets/finish.webp"
+                alt="Two-storey modern home with stone cladding, cedar soffits and floor-to-ceiling glass"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">Custom Home · 2025</span>
+                <h3>The Meadow House</h3>
+                <p>4,200 sq ft · Limestone, cedar &amp; steel · 11 months</p>
+              </figcaption>
+            </figure>
+            <figure class="project reveal">
+              <img
+                src="assets/exterior.webp"
+                alt="Modern home at dusk with warm interior lighting and new landscaping"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">Custom Home · 2024</span>
+                <h3>Orchard Ridge</h3>
+                <p>3,600 sq ft · 9 months</p>
+              </figcaption>
+            </figure>
+            <figure class="project reveal">
+              <img
+                src="assets/detail.webp"
+                alt="Close view of stone facade, deep overhang and glazed entry"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">Design-Build · 2024</span>
+                <h3>Stonegate Residence</h3>
+                <p>3,100 sq ft · 8 months</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROCESS ============ -->
+      <section class="section" id="process">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">How it works</p>
+            <h2>Five stages. No surprises.</h2>
+            <p>
+              Fixed-price contracts, a dedicated project manager and a live
+              schedule you can check any time.
+            </p>
+          </header>
+
+          <ol class="process">
+            <li class="step reveal">
+              <span class="step__num">01</span>
+              <div>
+                <h3>Consult &amp; budget</h3>
+                <p>
+                  We walk the site, learn your brief and give you an honest
+                  range before any drawings are paid for.
+                </p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">02</span>
+              <div>
+                <h3>Design &amp; permits</h3>
+                <p>
+                  We coordinate architects, engineers and the council so
+                  approvals land on schedule.
+                </p>
+              </div>
+            </li>
+            <li class="step step--img reveal">
+              <span class="step__num">03</span>
+              <div>
+                <h3>Site preparation</h3>
+                <p>
+                  Survey, clearing, grading and foundations — the groundwork for
+                  everything that follows.
+                </p>
+              </div>
+              <img
+                src="assets/site-prep.webp"
+                alt="Graded building lot with a poured foundation slab"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+            </li>
+            <li class="step step--img reveal">
+              <span class="step__num">04</span>
+              <div>
+                <h3>Construction</h3>
+                <p>
+                  Framing, envelope, services and finishes, with weekly photo
+                  updates and milestone inspections.
+                </p>
+              </div>
+              <img
+                src="assets/structure.webp"
+                alt="House under construction with roof and stone walls in place"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+            </li>
+            <li class="step reveal">
+              <span class="step__num">05</span>
+              <div>
+                <h3>Handover &amp; care</h3>
+                <p>
+                  A detailed walkthrough, a documented home manual and a 10-year
+                  structural warranty.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ TESTIMONIAL ============ -->
+      <section class="section section--accent" aria-label="Client testimonials">
+        <div class="container">
+          <div class="quotes" data-quotes>
+            <blockquote class="quote is-active">
+              <p>
+                “They told us the date we'd move in on the first day — and we
+                moved in on that date. The quality of the stonework still stops
+                our guests at the door.”
+              </p>
+              <footer>— Dana &amp; Marcus Hale, The Meadow House</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>
+                “The weekly updates meant we never had to chase anyone. Budget
+                held within one percent from contract to keys.”
+              </p>
+              <footer>— Priya Raman, Orchard Ridge</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>
+                “Ridgeline ran our clinic fit-out around live patients without a
+                single complaint. Professional start to finish.”
+              </p>
+              <footer>— Dr. Tom Ellery, Brookside Family Practice</footer>
+            </blockquote>
+            <div
+              class="quotes__dots"
+              role="tablist"
+              aria-label="Choose testimonial"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container about">
+          <div class="about__img reveal">
+            <img
+              src="assets/framing.webp"
+              alt="New home taking shape on a cleared lot surrounded by trees"
+              loading="lazy"
+              width="1280"
+              height="720"
+            />
+          </div>
+          <div class="about__copy reveal">
+            <p class="eyebrow">About us</p>
+            <h2>Family-owned since 1999.</h2>
+            <p>
+              Ridgeline started with two carpenters and a borrowed truck. Today
+              we're a team of 60 builders, project managers and trades — but we
+              still take on a limited number of projects each year so a
+              principal is on every site, every week.
+            </p>
+            <ul class="checks">
+              <li>Licensed, bonded and fully insured</li>
+              <li>Master Builders member &amp; award winner</li>
+              <li>In-house carpentry, masonry and concrete crews</li>
+              <li>Energy-efficient builds as standard</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section section--dark" id="contact">
+        <div class="container contact">
+          <div class="contact__copy reveal">
+            <p class="eyebrow">Start a project</p>
+            <h2>Let's talk about your land.</h2>
+            <p>
+              Tell us a little about what you're planning. A project lead will
+              get back to you within one business day.
+            </p>
+            <dl class="contact__details">
+              <div>
+                <dt>Call</dt>
+                <dd><a href="tel:+15550148800">(555) 014-8800</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd>
+                  <a href="mailto:hello@ridgeline.example"
+                    >hello@ridgeline.example</a
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>Visit</dt>
+                <dd>1200 Quarry Road, Suite 4<br />Mon–Fri, 7am – 5pm</dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="form reveal" novalidate>
+            <div class="form__row">
+              <label
+                >Name<input name="name" autocomplete="name" required
+              /></label>
+              <label
+                >Email<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+              /></label>
+            </div>
+            <div class="form__row">
+              <label
+                >Phone<input name="phone" type="tel" autocomplete="tel"
+              /></label>
+              <label
+                >Project type
+                <select name="type">
+                  <option>Custom home</option>
+                  <option>Addition / renovation</option>
+                  <option>Site preparation</option>
+                  <option>Commercial</option>
+                </select>
+              </label>
+            </div>
+            <label
+              >Estimated budget
+              <select name="budget">
+                <option>Under $250k</option>
+                <option>$250k – $750k</option>
+                <option>$750k – $1.5M</option>
+                <option>$1.5M+</option>
+              </select>
+            </label>
+            <label
+              >Tell us about the project<textarea
+                name="message"
+                rows="4"
+              ></textarea>
+            </label>
+            <button class="btn" type="submit">Request a consultation</button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="brand" href="#top">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M2 26 L12 10 L18 19 L22 13 L30 26 Z" fill="currentColor" />
+          </svg>
+          <span>Ridgeline<em>Builders</em></span>
+        </a>
+        <nav aria-label="Footer">
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p>© <span data-year></span> Ridgeline Builders. Lic. #RB-048213.</p>
+      </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
