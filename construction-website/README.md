@@ -1,6 +1,6 @@
-# Ridgeline Builders — construction company website
+# 岭峰建筑 (Ridgeline Builders) — construction company website
 
-Static site (HTML/CSS/JS, no build step) for a construction company, with a
+Chinese-language static site (HTML/CSS/JS, no build step) for a construction company, with a
 scroll-driven hero where the build-reveal video plays as you scroll.
 
 ## How the scroll video works

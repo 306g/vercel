@@ -12,8 +12,9 @@
   --on-dark-muted: #b3ab9e;
   --radius: 14px;
   --max: 1200px;
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --sans:
+    'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 }
 
 *,
@@ -31,7 +32,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--text);
-  font: 400 17px/1.6 var(--sans);
+  font: 400 17px/1.75 var(--sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -51,8 +52,8 @@ h2,
 h3 {
   font-family: var(--serif);
   font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
   margin: 0 0 0.4em;
 }
 
@@ -296,7 +297,7 @@ p {
 .hero__stage h1,
 .hero__stage h2 {
   font-size: clamp(2.8rem, 8vw, 6.2rem);
-  line-height: 0.98;
+  line-height: 1.18;
   text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
 }
 .hero__lede {

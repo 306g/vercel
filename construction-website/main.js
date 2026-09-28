@@ -192,7 +192,7 @@
 
   const setMenu = open => {
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
     menu.hidden = !open;
     updateNav();
   };
@@ -264,7 +264,7 @@
       const b = document.createElement('button');
       b.type = 'button';
       b.setAttribute('role', 'tab');
-      b.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      b.setAttribute('aria-label', `客户评价 ${i + 1}`);
       b.addEventListener('click', () => {
         show(i);
         restart();
@@ -306,13 +306,13 @@
     }
     if (firstInvalid) {
       status.className = 'form__status is-err';
-      status.textContent = 'Please add your name and a valid email address.';
+      status.textContent = '请填写您的姓名和有效的邮箱地址。';
       firstInvalid.focus();
       return;
     }
-    const name = form.elements.name.value.trim().split(' ')[0];
+    const name = form.elements.name.value.trim();
     status.className = 'form__status is-ok';
-    status.textContent = `Thanks, ${name}! We'll be in touch within one business day.`;
+    status.textContent = `谢谢您，${name}！我们将在一个工作日内与您联系。`;
     form.reset();
   });
 
