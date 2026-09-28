@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>岭峰建筑 — 定制住宅，从一片土地开始</title>
+    <meta
+      name="description"
+      content="岭峰建筑专注定制住宅、扩建翻新与小型商业项目。从空地到入住，一个团队，一份合同。"
+    />
+    <meta name="theme-color" content="#14130f" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 26 L12 10 L18 19 L22 13 L30 26 Z' fill='%23c0713a'/%3E%3C/svg%3E"
+    />
+    <link rel="preload" as="image" href="assets/frames/f001.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="岭峰建筑首页">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M2 26 L12 10 L18 19 L22 13 L30 26 Z" fill="currentColor" />
+          </svg>
+          <span>岭峰<em>建筑</em></span>
+        </a>
+        <nav class="nav__links" aria-label="主导航">
+          <a href="#services">服务</a>
+          <a href="#projects">案例</a>
+          <a href="#process">流程</a>
+          <a href="#about">关于我们</a>
+          <a href="#contact" class="btn btn--small">免费报价</a>
+        </nav>
+        <button
+          class="nav__toggle"
+          aria-label="打开菜单"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#services">服务</a>
+        <a href="#projects">案例</a>
+        <a href="#process">流程</a>
+        <a href="#about">关于我们</a>
+        <a href="#contact">免费报价</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO: scroll-scrubbed video ============ -->
+      <section class="hero" id="top" aria-label="简介">
+        <div class="hero__sticky">
+          <canvas class="hero__canvas" aria-hidden="true"></canvas>
+          <div class="hero__shade" aria-hidden="true"></div>
+
+          <div class="hero__stage hero__stage--1" data-range="0,0.3">
+            <p class="eyebrow">定制住宅 · 扩建翻新 · 商业项目</p>
+            <h1>一切，<br />从土地开始。</h1>
+            <p class="hero__lede">
+              每一个岭峰项目都始于一片空地——勘测、平整、打基础，由最终把钥匙交到您手中的同一支团队完成。
+            </p>
+          </div>
+
+          <div class="hero__stage hero__stage--2" data-range="0.34,0.64">
+            <p class="eyebrow">主体结构</p>
+            <h2>按图施工，<br />经久耐用。</h2>
+            <p class="hero__lede">
+              精工框架、石材与钢结构，每个节点均经过严格验收。
+            </p>
+          </div>
+
+          <div class="hero__stage hero__stage--3" data-range="0.7,1.01">
+            <p class="eyebrow">竣工交付</p>
+            <h2>最终，<br />成为一个家。</h2>
+            <div class="hero__ctas">
+              <a href="#contact" class="btn">开启您的项目</a>
+              <a href="#projects" class="btn btn--ghost">查看我们的作品</a>
+            </div>
+          </div>
+
+          <div class="hero__meter" aria-hidden="true">
+            <span class="hero__meter-label">施工进度</span>
+            <div class="hero__meter-track">
+              <div class="hero__meter-fill"></div>
+            </div>
+            <span class="hero__meter-pct">0%</span>
+          </div>
+
+          <div class="hero__hint" aria-hidden="true">
+            <span>向下滚动，见证建造</span>
+            <i></i>
+          </div>
+
+          <div class="hero__loader" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- ============ STATS ============ -->
+      <section class="stats" aria-label="公司概况">
+        <div class="container stats__grid">
+          <div class="stat">
+            <strong data-count="27" data-suffix="年">0</strong>
+            <span>建造经验</span>
+          </div>
+          <div class="stat">
+            <strong data-count="640" data-suffix="+">0</strong>
+            <span>已交付住宅</span>
+          </div>
+          <div class="stat">
+            <strong data-count="98" data-suffix="%">0</strong>
+            <span>按期交付率</span>
+          </div>
+          <div class="stat">
+            <strong data-count="10" data-suffix="年">0</strong>
+            <span>结构质保</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section class="section" id="services">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">我们的服务</p>
+            <h2>从破土到竣工，一个团队全程负责。</h2>
+            <p>
+              设计协调、报建审批、场地施工与主体建造，全部纳入一份合同——您只需联系一个人，由一个团队对结果负责。
+            </p>
+          </header>
+
+          <div class="services">
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 11 12 4l9 7v9H3z" />
+                  <path d="M9 20v-6h6v6" />
+                </svg>
+              </div>
+              <h3>定制住宅</h3>
+              <p>
+                建筑师主导或设计施工一体化。无论是完整图纸还是一张草图，我们都能把它变成贴合您生活方式的家。
+              </p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 20h18" />
+                  <path d="M5 20V9l4-3 4 3v11" />
+                  <path d="M13 20v-7h6v7" />
+                </svg>
+              </div>
+              <h3>扩建与翻新</h3>
+              <p>加建楼层、厨卫改造、整屋翻新——新旧部分无缝衔接，浑然一体。</p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 20h20" />
+                  <path d="M4 20l3-8h10l3 8" />
+                  <path d="M9 12V8h6v4" />
+                </svg>
+              </div>
+              <h3>场地平整</h3>
+              <p>
+                清表、平整、排水与基础工程。那些看不见的工作，恰恰支撑着看得见的一切。
+              </p>
+            </article>
+            <article class="service reveal">
+              <div class="service__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="3" width="16" height="18" />
+                  <path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2" />
+                </svg>
+              </div>
+              <h3>小型商业项目</h3>
+              <p>
+                2,000
+                平方米以内的办公楼、诊所与商铺，以同等于住宅项目的用心交付。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section section--dark" id="projects">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">精选作品</p>
+            <h2>近期项目</h2>
+          </header>
+
+          <div class="projects">
+            <figure class="project project--wide reveal">
+              <img
+                src="assets/finish.webp"
+                alt="石材外墙、雪松木挑檐与落地玻璃的两层现代住宅"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">定制住宅 · 2025</span>
+                <h3>草甸之家</h3>
+                <p>390 平方米 · 石灰石、雪松木与钢 · 工期 11 个月</p>
+              </figcaption>
+            </figure>
+            <figure class="project reveal">
+              <img
+                src="assets/exterior.webp"
+                alt="黄昏中亮起暖色灯光的现代住宅与新铺草坪"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">定制住宅 · 2024</span>
+                <h3>果岭山居</h3>
+                <p>335 平方米 · 工期 9 个月</p>
+              </figcaption>
+            </figure>
+            <figure class="project reveal">
+              <img
+                src="assets/detail.webp"
+                alt="石材立面、深挑檐与玻璃入口的近景"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+              <figcaption>
+                <span class="project__tag">设计施工一体化 · 2024</span>
+                <h3>石门居</h3>
+                <p>290 平方米 · 工期 8 个月</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROCESS ============ -->
+      <section class="section" id="process">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">合作流程</p>
+            <h2>五个阶段，没有意外。</h2>
+            <p>固定总价合同、专属项目经理，以及随时可查看的实时工期表。</p>
+          </header>
+
+          <ol class="process">
+            <li class="step reveal">
+              <span class="step__num">01</span>
+              <div>
+                <h3>咨询与预算</h3>
+                <p>
+                  我们实地踏勘、了解您的需求，并在您支付任何设计费用之前给出真实的预算区间。
+                </p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">02</span>
+              <div>
+                <h3>设计与报建</h3>
+                <p>
+                  由我们统筹建筑师、结构工程师与主管部门，确保审批按计划落地。
+                </p>
+              </div>
+            </li>
+            <li class="step step--img reveal">
+              <span class="step__num">03</span>
+              <div>
+                <h3>场地准备</h3>
+                <p>测量放线、清表、平整与基础施工——为后续一切打下根基。</p>
+              </div>
+              <img
+                src="assets/site-prep.webp"
+                alt="已完成平整并浇筑基础底板的建设用地"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+            </li>
+            <li class="step step--img reveal">
+              <span class="step__num">04</span>
+              <div>
+                <h3>主体施工</h3>
+                <p>
+                  框架、围护、水电与精装修，每周推送现场照片，关键节点逐一验收。
+                </p>
+              </div>
+              <img
+                src="assets/structure.webp"
+                alt="屋顶与石墙已就位的在建住宅"
+                loading="lazy"
+                width="1280"
+                height="720"
+              />
+            </li>
+            <li class="step reveal">
+              <span class="step__num">05</span>
+              <div>
+                <h3>交付与售后</h3>
+                <p>详尽的交房验收、完整的房屋使用手册，以及 10 年结构质保。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ TESTIMONIAL ============ -->
+      <section class="section section--accent" aria-label="客户评价">
+        <div class="container">
+          <div class="quotes" data-quotes>
+            <blockquote class="quote is-active">
+              <p>
+                “开工第一天他们就告诉我们入住日期——我们真的在那一天搬了进去。直到现在，来访的朋友还会在门口驻足欣赏那面石墙。”
+              </p>
+              <footer>— 王先生与李女士，草甸之家业主</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>
+                “每周的进度汇报让我们从不需要追着人问。从签合同到拿钥匙，预算偏差不到百分之一。”
+              </p>
+              <footer>— 陈女士，果岭山居业主</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>
+                “诊所改造期间一直在正常接诊，岭峰全程没有引起一次投诉。自始至终都非常专业。”
+              </p>
+              <footer>— 刘医生，溪畔家庭诊所</footer>
+            </blockquote>
+            <div
+              class="quotes__dots"
+              role="tablist"
+              aria-label="选择客户评价"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container about">
+          <div class="about__img reveal">
+            <img
+              src="assets/framing.webp"
+              alt="树林环绕的空地上，一栋新房正在成形"
+              loading="lazy"
+              width="1280"
+              height="720"
+            />
+          </div>
+          <div class="about__copy reveal">
+            <p class="eyebrow">关于我们</p>
+            <h2>始于 1999 年的家族企业。</h2>
+            <p>
+              岭峰起步于两位木匠和一辆借来的卡车。如今我们已是一支 60
+              人的团队，涵盖施工人员、项目经理与各专业工种——但我们每年仍只承接有限数量的项目，确保每个工地每周都有公司负责人亲自到场。
+            </p>
+            <ul class="checks">
+              <li>持证经营，具备履约担保与全额保险</li>
+              <li>建筑行业协会会员，多次获奖</li>
+              <li>自有木作、砌筑与混凝土施工队伍</li>
+              <li>节能建造，标准配置</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section section--dark" id="contact">
+        <div class="container contact">
+          <div class="contact__copy reveal">
+            <p class="eyebrow">开启项目</p>
+            <h2>聊聊您的那片土地。</h2>
+            <p>简单介绍一下您的计划，项目负责人将在一个工作日内与您联系。</p>
+            <dl class="contact__details">
+              <div>
+                <dt>电话</dt>
+                <dd><a href="tel:+864000148800">400-014-8800</a></dd>
+              </div>
+              <div>
+                <dt>邮箱</dt>
+                <dd>
+                  <a href="mailto:hello@ridgeline.example"
+                    >hello@ridgeline.example</a
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>地址</dt>
+                <dd>采石路 1200 号 4 室<br />周一至周五 7:00 – 17:00</dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="form reveal" novalidate>
+            <div class="form__row">
+              <label
+                >姓名<input name="name" autocomplete="name" required
+              /></label>
+              <label
+                >邮箱<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+              /></label>
+            </div>
+            <div class="form__row">
+              <label
+                >电话<input name="phone" type="tel" autocomplete="tel"
+              /></label>
+              <label
+                >项目类型
+                <select name="type">
+                  <option>定制住宅</option>
+                  <option>扩建 / 翻新</option>
+                  <option>场地平整</option>
+                  <option>商业项目</option>
+                </select>
+              </label>
+            </div>
+            <label
+              >预估预算
+              <select name="budget">
+                <option>200 万元以下</option>
+                <option>200 – 500 万元</option>
+                <option>500 – 1000 万元</option>
+                <option>1000 万元以上</option>
+              </select>
+            </label>
+            <label>项目简介<textarea name="message" rows="4"></textarea></label>
+            <button class="btn" type="submit">预约咨询</button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="brand" href="#top">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M2 26 L12 10 L18 19 L22 13 L30 26 Z" fill="currentColor" />
+          </svg>
+          <span>岭峰<em>建筑</em></span>
+        </a>
+        <nav aria-label="页脚导航">
+          <a href="#services">服务</a>
+          <a href="#projects">案例</a>
+          <a href="#process">流程</a>
+          <a href="#contact">联系我们</a>
+        </nav>
+        <p>
+          © <span data-year></span> 岭峰建筑 版权所有 · 资质证书编号 RB-048213
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
